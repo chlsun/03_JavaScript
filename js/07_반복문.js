@@ -198,3 +198,222 @@ function check16(){
 
     resultDiv.innerHTML = result;
 }
+
+function check17(){
+    for(let i = 1; i<=3; i++){
+        let result = '';
+
+        for(let j = 1; j<=4; j++){
+            result += j;
+        }
+
+        console.log(result);
+        console.log('');
+    }
+}
+
+function check18(){
+    for(let i = 1; i<=4; i++){
+        let result = '';
+
+        for(let j = 1; j<=5; j++){
+            result += j;
+        }
+
+        console.log(result);
+        console.log('');
+    }
+}
+
+function check19(){
+    for(let i = 1; i<=3; i++){
+        let result = '';
+
+        for(let j = 6; j>=1; j--){
+            result += j;
+        }
+
+        console.log(result);
+        console.log('');
+    }
+}
+
+function check20(){
+    for(let i = 1; i<=5; i++){
+        let result = '';
+
+        for(let j = 1; j<=i; j++){
+            result += j;
+        }
+
+        console.log(result);
+    }
+}
+
+function check21(){
+    for(let i = 3; i<=7; i++){
+        let result = '';
+
+        for(let j = 3; j<=i; j++){
+            result += j;
+        }
+
+        console.log(result);
+    }
+}
+
+function check22(){
+    for(let i = 1; i<=3; i++){
+        let result = '';
+
+        for(let j = 1; j<=i; j++){
+            result += '*';
+        }
+
+        console.log(result);
+    }
+}
+
+function check23(){
+    const input = document.getElementById("inputNum23");
+
+    if(input.value.length === 0){
+        alert("숫자를 입력해주세요");
+        return;
+    }
+
+    const valNum = Number(input.value);
+
+    // 입력된 숫자가 0 이하일 경우
+    if(valNum <= 0){
+        alert("0보다 큰 수를 입력하세요");
+        return;
+    }
+
+    for(let i = 1; i<=valNum; i++){
+        let result = '';
+
+        for(let j = 1; j<=i; j++){
+            result += '*';
+        }
+
+        console.log(result);
+    }
+}
+
+
+function check24(){
+    for(let i = 4; i >= 1; i--){
+        let result = '';
+
+        for(let j = 1; j <= i; j++){
+            result += '*';
+        }
+
+        console.log(result);
+    }
+}
+
+function check25(){
+    let count = 0;
+    for(let i = 1; i <= 30; i++){
+        if(i % 4 === 0){
+            count++
+        }
+    }
+
+    alert(`1부터 30 사이의 정수 중 4의 배수 ${count}개 입니다`);
+}
+
+function check26(){
+    const val = Number(document.getElementById("input26").value);
+
+    let count = 0;
+
+    for(let i = 1; i <= 100; i++){
+        if(i % val === 0){
+            count++
+        }
+    }
+
+    alert(`1부터 100 사이의 정수 중 ${val}의 배수 ${count}개 입니다`);
+}
+
+function check27(){
+    let count = 1;
+
+    for(let i=1 ; i<= 3 ; i++){
+
+        let result = '';
+
+        for(let j=1 ; j<=4 ; j++){
+            // result += count++ + ' ';
+            result += `${count++} `;
+        }
+
+        console.log(result);
+    }
+}
+
+function check28(){
+    let sum = 0;
+    let val;
+
+    while( (val = prompt("숫자 입력(취소 클릭 시 종료)")) !== null){
+        // promprt 
+        //  -> 확인 클릭 : 입력한 내용 반환
+        //  -> 취소 클릭 : null 반환
+
+        sum += Number(val);
+    }
+
+    alert(`합계 : ${sum}`);
+}
+
+
+function check29(){
+    const gimbap = 4000;
+    const ramen = 4500;
+    const donkkaseu = 9000;
+
+    let gCount = 0;
+    let rCount = 0;
+    let dCount = 0;
+
+    let total = 0;
+
+    let val;
+
+    while(val !== null){
+        val = prompt("메뉴 번호 입력(1.김밥 2.라면 3. 돈까스)");
+
+        switch(val){
+            case "1" : gCount++; break;
+            case "2" : rCount++; break;
+            case "3" : dCount++; break;
+            case null : alert("주문 완료!"); break;
+            default: alert("잘못 입력 하셨습니다");
+        }
+    }
+
+    let outputHtml = '';
+
+    if(gCount > 0){
+        outputHtml += `<li>김밥(${gCount}개) : ${gimbap * gCount}</li>`
+    }
+
+    if(rCount > 0){
+        outputHtml += `<li>라면(${rCount}개) : ${ramen * rCount}</li>`
+    }
+
+    if(dCount > 0){
+        outputHtml += `<li>돈까스(${dCount}개) : ${donkkaseu * dCount}</li>`
+    }
+
+    const sum = (gimbap * gCount) + (ramen * rCount) + (donkkaseu * dCount);
+
+    outputHtml += `<li>합계 : ${sum}원</li>`
+
+    const output = document.getElementById("result29");
+    output.innerHTML = outputHtml;
+}
