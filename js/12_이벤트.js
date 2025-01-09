@@ -106,3 +106,73 @@ test1.addEventListener("click", ()=>{
   // #test1에 num을 1 증가 시킨 값을 대입
   test1.innerText = ++num;
 })
+
+
+/* 버튼 배경색 변경 */
+
+// querySelectorAll() -> 서낵자가 일치하는 요소를 모두 반환(배열)
+const colorBtn = document.querySelectorAll(".btn-container > button");
+
+const result2 = document.getElementById("result2");
+
+for(let i=0; i<colorBtn.length; i++){
+  colorBtn[i].style.backgroundColor = colorBtn[i].innerText;
+  // 각 버튼에 클릭 되었을 때(이벤트 리스너)의 
+  // 동작(이벤트 핸들러)을 추가
+
+  colorBtn[i].addEventListener("click", ()=>{
+    console.log(colorBtn[i].innerText);
+    result2.style.backgroundColor = `${colorBtn[i].innerText}`;
+
+    // result2.style.backgroundColor = `${this.innerText}`; 
+    // 람다 함수로 접근 하면 this가 window를 가르킴 
+    // => 그래서 안됨
+    console.log(this);  
+  });
+}
+
+
+
+
+/* 실습 문제 */
+
+/*
+  "변경하기" 버튼 클릭 시
+  input 요소에 작성된 색상 값을 얻어와
+  바로 위 .display 요소의 배경색 변경하기
+ */
+const changeBtn = document.querySelector("#changeBtn");
+const boxDiv = document.querySelectorAll(".box");
+const display = document.querySelectorAll(".display");
+const inputColor = document.querySelectorAll(".inputColor");
+
+/** button이 클릭 되었을때 한번에 변경 */
+changeBtn.addEventListener("click", ()=>{
+  for(let i=0; i<boxDiv.length; i++){
+    display[i].style.backgroundColor = inputColor[i].value;
+    inputColor[i].value = '';
+  }
+});
+
+/** input태그에서 Enter가 눌렸을때 배경색 변경  */
+for(let i=0; i<boxDiv.length; i++){
+  inputColor[i].addEventListener("keydown", (e)=>{
+    if(e.key === 'Enter'){
+      display[i].style.backgroundColor = inputColor[i].value;
+      inputColor[i].value = '';
+    }
+  });
+}
+
+/** input태그 안에 value값이 변경 될때마다 확인해서 배경색 변경 */
+for(let i=0; i<boxDiv.length; i++){
+  inputColor[i].addEventListener("input", (e)=>{
+    display[i].style.backgroundColor = inputColor[i].value;
+  })
+};
+
+
+
+
+
+
