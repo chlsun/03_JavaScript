@@ -1,0 +1,25 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container{
+  display: flex;
+  margin: 40px;
+  flex-wrap: wrap;
+  width: 210px;
+}
+.container .numBox{
+  border: 1px solid black;
+  height: 70px;
+  width: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container .numBox:hover{
+  background-color: skyblue;
+}
+.container .numBox:active{
+  background-color: pink;
+}

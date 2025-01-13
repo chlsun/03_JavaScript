@@ -1,0 +1,15 @@
+.inputContainer > div{
+  display: flex;
+
+}
+.inputContainer label{
+  min-width: 80px;
+  display: block;
+}
+.inputContainer .price{
+  margin: 0 10px;
+}
+.inputContainer > div > input{
+  width: 60px;
+  margin-right: 5px;
+}

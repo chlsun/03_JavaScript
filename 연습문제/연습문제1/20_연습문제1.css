@@ -1,0 +1,9 @@
+.inputContainer{
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+}
+
+.inputContainer > .inputNum{
+  margin: 5px 0;
+}
