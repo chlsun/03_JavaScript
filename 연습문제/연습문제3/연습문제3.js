@@ -6,6 +6,14 @@ const resultElement = document.querySelector("#result");
 resultBtn.addEventListener("click", ()=>{
   const checkedMenu = document.querySelectorAll("input[name=menus]:checked");
 
+  // const fruits = document.querySelectorAll("input[name=menus]")
+
+  // for(let fruit of fruits){
+  //   if(fruit.checked){
+  //     console.log("여기서 실행시키는 방법도 있긴함");
+  //   }
+  // }
+
   let sum = 0;
   let result = '';
   for(let menu of checkedMenu){
