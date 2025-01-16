@@ -30,7 +30,7 @@ titleInput.addEventListener("click", (e)=>{
   input.focus();
 });
 
-/* 수정버튼 클릭이벤트트 */
+/* 수정버튼 클릭이벤트 */
 const updateBtn = document.querySelector("#updateBtn");
 
 updateBtn.addEventListener("click", ()=>{

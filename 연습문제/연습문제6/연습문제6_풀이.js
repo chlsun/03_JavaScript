@@ -43,7 +43,7 @@ const createMenuContent = () => {
 /* 작성되어있는 식당명 클릭 시 */
 /* 작성된 식당명이 사라지고 input 태그가 나타나게함 */
 resName.addEventListener("click", e => {
-
+  
   e.target.classList.toggle("res-name-hidden");
   resNameInput.classList.toggle("res-name-hidden");
 

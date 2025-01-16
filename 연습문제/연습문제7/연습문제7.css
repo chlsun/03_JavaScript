@@ -1,0 +1,46 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+main{
+  margin: 20px;
+}
+.btnBox{
+  display: flex;
+}
+.btnBox button{
+  margin-right: 10px;
+  margin-bottom: 6px;
+}
+
+.btnBox .hidden{
+  display: none;
+}
+
+.numberPad{
+  width: 300px;
+  height: 539.5px;
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.numberPad .num{
+  width: calc(20% - 8px);
+  height: 47.5px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  border: 1px solid black;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.numberPad .num.active{
+  background-color: aquamarine;
+}
+.numberPad .num:nth-child(5n){
+  margin-right: 0;
+}
